@@ -11,7 +11,7 @@ var zappaValue = 0;
 // We need some booleans to track where we are at in gameplay. 
 // var firstClick = false;
 // var clickAgain = false;
-// var gameOver = false;
+var gameOver = false;
 
 // Counters
 var wins = 0;
@@ -38,35 +38,59 @@ function setTargetValue() {
 //functions which add value to the score
 function addAlpha() {
   playerScore = playerScore + alphaValue;
-  $("#score").text(playerScore)
+  $("#score").text(playerScore);
+  winCheck();
 };
 function addBeta() {
   playerScore = playerScore + betaValue;
-  $("#score").text(playerScore)
+  $("#score").text(playerScore);
+  winCheck();
 };
 function addGamma() {
   playerScore = playerScore + gammaValue;
-  $("#score").text(playerScore)
+  $("#score").text(playerScore);
+  winCheck();
 };
 function addZappa() {
   playerScore = playerScore + zappaValue;
-  $("#score").text(playerScore)
+  $("#score").text(playerScore);
+  winCheck();
 };
 
+function winCheck() {
+  if (playerScore === targetValue && playerScore != 0) {
+    $("#result").text("That last game? You WON IT!")
+        gameOver = true;
+        setTargetValue();
+        playerScore = 0;
+        wins++;
+        $("#wins").text("For the record, you won " + wins + " times.");
+  }
+  if (playerScore > targetValue) {
+    $("#result").text("Last time, you didn't win.")
+    gameOver = true;
+    setTargetValue();
+    playerScore =0 ;
+    losses++;
+    $("#losses").text("I wouldn't share this, but you lost " + wins + " times.")
+  }
+};
 
 $(document).ready(function () {
 
   setTargetValue();
-  
-    // on click of a crystal, call a function
-    $("#alpha").on("click", addAlpha);
-    $("#beta").on("click", addBeta);
-    $("#gamma").on("click", addGamma);
-    $("#zappa").on("click", addZappa);
+
+  // on click of a crystal, call a function
+  $("#alpha").on("click", addAlpha);
+  $("#beta").on("click", addBeta);
+  $("#gamma").on("click", addGamma);
+  $("#zappa").on("click", addZappa);
+
+
+  //game on, win, loss:
   
 
-    //game on, win, loss:
-  // if (playerScore < targetValue) {
+
   //   $("#result").text("This game is in progress")
   // }
 //  if (playerScore === targetValue && playerScore != 0) {
@@ -78,11 +102,7 @@ $(document).ready(function () {
 // console.log("ps "+playerScore + "  tv "+targetValue)
 //   }
   // if (playerScore > targetValue {
-  //   $("#result").text("Last time, you didn't win.")
-  //   gameOver = true;
-  //   setTargetValue();
-  //   losses++;
-  //   $("#losses").text("I wouldn't share this, but you lost " + wins + " times.")
+    
   // }
 
 });
