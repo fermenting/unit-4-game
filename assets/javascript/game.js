@@ -2,43 +2,73 @@
 var targetValue = 0;
 
 // each of dem crystalz is gonna need a value too.
-
 var alphaValue = 0;
 var betaValue = 0;
 var gammaValue = 0;
 var zappaValue = 0;
 
 //range for crystals
-
+//set values for alpha,beta,gamma,zappa
 alphaValue = Math.floor(Math.random()*11) + 2;
-console.log(alphaValue);
-
+console.log("a "+alphaValue);
 betaValue = Math.floor(Math.random()*11) + 2;
-console.log(betaValue);
-
+console.log("b "+betaValue);
 gammaValue = Math.floor(Math.random()*11) + 2;
-console.log(gammaValue);
-
+console.log("g "+gammaValue);
 zappaValue = Math.floor(Math.random()*11) + 2;
-console.log(zappaValue);
+console.log("z "+zappaValue);
 
 // When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-
 var playerScore = 0;
 
-// on click of a crystal:
+$(document).ready(function() {
 
+// on click of a crystal, call a function
+$("#alpha").on("click", addAlpha);
+$("#beta").on("click", addBeta);
+$("#gamma").on("click", addGamma);
+$("#zappa").on("click", addZappa);
+
+//functions which add value to the score
+function addAlpha() {
+  playerScore = playerScore + alphaValue;
+  $("#score").text("Your Score: " +playerScore)
+  console.log ("ps "+playerScore);
+};
+function addBeta() {
+  playerScore = playerScore + betaValue;
+  $("#score").text("Your Score: " +playerScore)
+  console.log ("ps "+playerScore);
+};
+function addGamma() {
+  playerScore = playerScore + gammaValue;
+  $("#score").text("Your Score: " +playerScore)
+  console.log ("ps "+playerScore);
+};
+function addZappa() {
+  playerScore = playerScore + zappaValue;
+  $("#score").text("Your Score: " + playerScore)
+  console.log ("ps "+playerScore);
+};
   
 // set targetValue
 //range for targetValue
 targetValue = Math.floor(Math.random()*100) + 20;
-console.log (targetValue);
+console.log ("tv "+targetValue);
+$("#target").text("Target Score: " + targetValue);
 
+
+
+if (playerScore === targetValue) {
+   $("#result").text("You're a WINNER!")
+  }
+if (playerScore > targetValue) {
+  $("#result").text("Many will enter. You didn't win.")
+  }
 
 
 // display .target { display: inline }
-// set values for alpha,beta,gamma,zappa
-//  add value to player score depending on crystal clicked.
+
 
 
 // logic
@@ -46,12 +76,11 @@ console.log (targetValue);
 // if (playerScore === targetValue) {WIN}
 // if (playerScore > targetValue) {GAME OVER}
 
-// game restarts
+// game restarts (window.load) function.reset() {location load} refresh 
 
 // display counters for wins & losses
 // set new targetValue
 // scramble values for alpha,beta,gamma,zappa
 
 
-
-
+});
