@@ -4,3 +4,38 @@
   /* display: none */
 }
 
+h1 {
+  font-family: 'Sigmar One', cursive;
+color: purple;
+}
+
+h2{
+  font-family: 'Sigmar One', cursive;
+  color: blueviolet;
+  font-size:  25px;
+}
+
+h5 {
+  font-family: 'Sigmar One', cursive;
+  font-size:  40px;
+}
+
+
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+div {
+  font-family: 'Geostar Fill', cursive;
+}
+
+#score, #target, #wins, #losses {
+  font-family: 'Geostar Fill', cursive;
+  font-size: 80px;
+}
+
+button {
+  font-size: 15px;
+  margin: 5px;
+}

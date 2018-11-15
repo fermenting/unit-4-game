@@ -1,46 +1,87 @@
 <!doctype <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <title>Quadranglez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+
+  <!-- Booty Strappy -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+<!-- Googly Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Geostar+Fill|Raleway:500|Sigmar+One" rel="stylesheet">
+
+
+
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-  
+
   <!-- Jquery! -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/javascript/game.js"></script>
 </head>
-<body>
 
-<h1> Quadranglez</h1>
+<body class="bg-dark">
 
-<h2> Can you navigate the anglez?! </h2>
+  <div class="jumbotron jumbotron-fluid bg-primary">
+    <div class="container">
+      <h1 class="display-4 text-center"> QUADRANGLEZ</h1>
+      <h2 class="lead text-center">Can you navigate the anglez?!</h2>
+    </div>
+  </div>
 
-<h4> Each of the mystery angles below will add to the total magic angle. You must figure out the correct amount of mystery to make magic!</h4>
+
 
   <!-- There will be four crystals displayed as buttons on the page.-->
 
-  <button id="alpha"> ALPHA </button>
-  <button id="beta"> BETA </button>
-  <button id="gamma"> GAMMA </button>
-  <button id="zappa"> ZAPPA </button>
+  <div class="card mx-auto bg-light" style="width: 40rem;">
+    <div class="card-body">
+      <h5 class="card-title text-center">Test the angle of your 'drangle!</h5>
+      <p class="card-text text-center">Each mysterious angle will add to the magical Quadrangle. </p>
+      <p class="card-text text-center">Use the correct amount of mystery to make magic!</p>
+      <div class="text-center">
+        <button id="alpha" type="button" class="alert alert-info"> ALPHA </button>
+        <button id="beta" class="alert alert-warning"> BETA </button>
+        <button id="gamma" class="alert alert-success"> GAMMA </button>
+        <button id="zappa" class="alert alert-danger"> ZAPPA </button>
+      </div>
+    </div>
+  </div>
 
-    <!-- The player will be shown a random number at the start of the game. -->
 
-    <div id="target"> Target 000</div>
-    <div id="score"> Score 000</div>
-    <div id="result"> </div>
-    
 
-    <!-- When the player clicks on a crystal, it will add a specific amount of points to the player's total score. -->
-    
+  <!-- The player will be shown a random number at the start of the game. -->
 
-    <!--Your game will hide this amount until the player clicks a crystal. 
+  <div class="card mx-auto bg-light" style="width: 40rem;">
+      <div class="card-body">
+        <h5 class="card-title text-center">Magical Quadrangle</h5>
+        <div id="target" class="text-center"> 000</div>
+        <p></p><p></p>
+        <h5 class="card-title text-center">Mysterious Score</h5>
+        <div id="score" class="text-center"> 000</div>
+        <p></p><p></p>
+        <h5 class="card-title text-center">Wins</h5>
+        <div id="wins"></div>
+        <p></p><p></p>
+        <h5 class="card-title text-center">Losses</h5>
+        <div id="losses"></div>
+      
+        </div>
+      </div>
+    </div>
+
+
+
+  <!-- When the player clicks on a crystal, it will add a specific amount of points to the player's total score. -->
+
+
+  <!--Your game will hide this amount until the player clicks a crystal. 
     Added to CSS-->
 
 
-    <!-- When they do click one, update the player's score counter.
+  <!-- When they do click one, update the player's score counter.
     The player wins if their total score matches the random number from the beginning of the game.
     
     The player loses if their score goes above the random number.
@@ -59,4 +100,5 @@
 
 
 </body>
+
 </html>>
