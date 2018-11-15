@@ -8,30 +8,25 @@ var betaValue = 0;
 var gammaValue = 0;
 var zappaValue = 0;
 
-// We need some booleans to track where we are at in gameplay. 
-// var firstClick = false;
-// var clickAgain = false;
-var gameOver = false;
-
 // Counters
 var wins = 0;
 var losses = 0;
 
-//range for crystals: set values for alpha,beta,gamma,zappa
-alphaValue = Math.floor(Math.random() * 11) + 1;
-console.log("a " + alphaValue);
-betaValue = Math.floor(Math.random() * 11) + 1;
-console.log("b " + betaValue);
-gammaValue = Math.floor(Math.random() * 11) + 1;
-console.log("g " + gammaValue);
-zappaValue = Math.floor(Math.random() * 11) + 1;
-console.log("z " + zappaValue);
-
 // set targetValue somewhere between 19-120
+//range for crystals: set values for alpha,beta,gamma,zappa
+// putting all these in the function setTargetValue allows us to call this at the beginning of each game to scramble the crystals.
 function setTargetValue() {
   targetValue = Math.floor(Math.random() * 100) + 20;
   console.log("tv " + targetValue);
   $("#target").text(targetValue);
+  alphaValue = Math.floor(Math.random() * 11) + 1;
+  console.log("a " + alphaValue);
+  betaValue = Math.floor(Math.random() * 11) + 1;
+  console.log("b " + betaValue);
+  gammaValue = Math.floor(Math.random() * 11) + 1;
+  console.log("g " + gammaValue);
+  zappaValue = Math.floor(Math.random() * 11) + 1;
+  console.log("z " + zappaValue);
 };
 
 
@@ -57,22 +52,24 @@ function addZappa() {
   winCheck();
 };
 
+function newGame() {
+  setTargetValue();
+  playerScore = 0;
+  $("#scramble").text("Just when you get to know an angle, it goes and changes on you...");
+}
+
 function winCheck() {
   if (playerScore === targetValue && playerScore != 0) {
-    $("#result").text("That last game? You WON IT!")
-    gameOver = true;
-    setTargetValue();
-    playerScore = 0;
+    $("#result").text("You found the Magical Angle! Keep going!");
     wins++;
     $("#wins").text(wins);
+    newGame();
   }
   if (playerScore > targetValue) {
-    $("#result").text("Last time, you didn't win.")
-    gameOver = true;
-    setTargetValue();
-    playerScore = 0;
+    $("#result").text("Your Angle was too large. Let's try it again.")
     losses++;
-    $("#losses").text(losses)
+    $("#losses").text(losses);
+    newGame();
   }
 };
 

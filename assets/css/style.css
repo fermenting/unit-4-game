@@ -11,8 +11,21 @@ color: purple;
 
 h2{
   font-family: 'Sigmar One', cursive;
-  color: blueviolet;
+  color: rosybrown;
   font-size:  20px;
+  
+}
+h3 {
+  font-family: 'Sigmar One', cursive;
+  color: blue;
+  font-size: 20px;
+}
+
+h4{
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 18px;
 }
 
 h5 {
@@ -39,3 +52,5 @@ button {
   font-size: 15px;
   margin: 5px;
 }
+
+/*  */
