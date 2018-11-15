@@ -1,4 +1,5 @@
 ![An Ideal Quadrangle of Mysterious Measurements](assets/images/quadrangle.png)
+
 Source: [playcoolmath](https://playcoolmath.com/en/math-lessons/math-for-kids/basic-geometric-shapes/quadrangles)
 
 # QUADRANGLEZ
@@ -42,7 +43,6 @@ function winCheck() {
 * [Jquery](https://code.jquery.com/) - Game logic and efficient syntax.
 * [BootStrap](https://getbootstrap.com/) - Prefab CSS styling.
 * [Google Fonts](https://fonts.google.com/) - For custom fonts.
-
 
 ## Authors
 
