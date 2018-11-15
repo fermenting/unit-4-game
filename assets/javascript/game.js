@@ -60,19 +60,19 @@ function addZappa() {
 function winCheck() {
   if (playerScore === targetValue && playerScore != 0) {
     $("#result").text("That last game? You WON IT!")
-        gameOver = true;
-        setTargetValue();
-        playerScore = 0;
-        wins++;
-        $("#wins").text("For the record, you won " + wins + " times.");
+    gameOver = true;
+    setTargetValue();
+    playerScore = 0;
+    wins++;
+    $("#wins").text(wins);
   }
   if (playerScore > targetValue) {
     $("#result").text("Last time, you didn't win.")
     gameOver = true;
     setTargetValue();
-    playerScore =0 ;
+    playerScore = 0;
     losses++;
-    $("#losses").text("I wouldn't share this, but you lost " + wins + " times.")
+    $("#losses").text(losses)
   }
 };
 
@@ -88,21 +88,21 @@ $(document).ready(function () {
 
 
   //game on, win, loss:
-  
+
 
 
   //   $("#result").text("This game is in progress")
   // }
-//  if (playerScore === targetValue && playerScore != 0) {
-//     $("#result").text("That last game? You WON IT!")
-//     gameOver = true;
-//     setTargetValue();
-//     wins++;
-//     $("#wins").text("For the record, you won " + wins + " times.")
-// console.log("ps "+playerScore + "  tv "+targetValue)
-//   }
+  //  if (playerScore === targetValue && playerScore != 0) {
+  //     $("#result").text("That last game? You WON IT!")
+  //     gameOver = true;
+  //     setTargetValue();
+  //     wins++;
+  //     $("#wins").text("For the record, you won " + wins + " times.")
+  // console.log("ps "+playerScore + "  tv "+targetValue)
+  //   }
   // if (playerScore > targetValue {
-    
+
   // }
 
 });
